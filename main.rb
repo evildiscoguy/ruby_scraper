@@ -53,7 +53,7 @@ row_data_left = s.add_style sz: 12, alignment: { horizontal: :center }
 wb.add_worksheet(name: 'Price Changes') do |sheet|
   sheet.add_row ["Price Changes for #{date}"], style: wb_title
   sheet.add_row
-  sheet.add_row ['Cat Num', 'Product', 'Price'], style: row_header
+  sheet.add_row ['Cat Num', 'Product', 'Price (£)'], style: row_header
 
   # Loop to grab product detail using xpath and add to workbook
   products.each do |product|
@@ -69,7 +69,7 @@ wb.add_worksheet(name: 'Price Changes') do |sheet|
 
   sheet.add_row
   sheet.add_row ['❤️ by Lee Jackson']
-  sheet.column_widths 20, 60, 10
+  sheet.column_widths 20, 60, 12
 end
 
 # Write the workbook to file
