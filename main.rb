@@ -9,7 +9,7 @@ time = Time.new
 date = "#{time.day}/#{time.month}/#{time.year}"
 
 # Set a User Agent to get pass scraping blocker
-agent = 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
+agent = 'Mozilla/5.0 (Windows; U; Win 9x 4.90; SG; rv:1.9.2.4) Gecko/20101104 Netscape/9.1.0285'
 
 # Array containing all the product links
 products = ['https://www.argos.co.uk/product/5718469',
