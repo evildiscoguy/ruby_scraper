@@ -138,11 +138,11 @@ wb.add_worksheet(name: 'VGS Wall') do |sheet|
   sheet.add_row
   sheet.add_row ['Cat Num', 'Product', 'Price (£)'], style: row_header
 
-  sheet.add_row ['Sony', '', ''], style: row_header
+  sheet.add_row ['Sony'], style: row_header
   add_to_sheet(sheet, sony_hw, row_data_left, row_data, currency)
   add_to_sheet(sheet, sony_games, row_data_left, row_data, currency)
 
-  sheet.add_row ['Nintendo', '', ''], style: row_header
+  sheet.add_row ['Nintendo'], style: row_header
   add_to_sheet(sheet, nintendo_hw, row_data_left, row_data, currency)
   add_to_sheet(sheet, nintendo_games, row_data_left, row_data, currency)
 
@@ -155,25 +155,25 @@ wb.add_worksheet(name: 'Furniture Prices') do |sheet|
   sheet.add_row
   sheet.add_row ['Cat Num', 'Product', 'Price (£)'], style: row_header
 
-  sheet.add_row ['Garden Room', '', ''], style: row_header
+  sheet.add_row ['Garden Room'], style: row_header
   add_to_sheet(sheet, garden_room, row_data_left, row_data, currency)
 
-  sheet.add_row ['Grey Sofa Living', '', ''], style: row_header
+  sheet.add_row ['Grey Sofa Living'], style: row_header
   add_to_sheet(sheet, grey_living, row_data_left, row_data, currency)
 
-  sheet.add_row ['Dining Room', '', ''], style: row_header
+  sheet.add_row ['Dining Room'], style: row_header
   add_to_sheet(sheet, dining_room, row_data_left, row_data, currency)
 
-  sheet.add_row ['Green Sofa Living', '', ''], style: row_header
+  sheet.add_row ['Green Sofa Living'], style: row_header
   add_to_sheet(sheet, green_living, row_data_left, row_data, currency)
 
-  sheet.add_row ['Pidgeon Holes', '', ''], style: row_header
+  sheet.add_row ['Pidgeon Holes'], style: row_header
   add_to_sheet(sheet, pidgeon_holes, row_data_left, row_data, currency)
 
-  sheet.add_row ['Kids Room', '', ''], style: row_header
+  sheet.add_row ['Kids Room'], style: row_header
   add_to_sheet(sheet, kids_room, row_data_left, row_data, currency)
 
-  sheet.add_row ['Bed Room', '', ''], style: row_header
+  sheet.add_row ['Bed Room'], style: row_header
   add_to_sheet(sheet, bed_room, row_data_left, row_data, currency)
 
   sheet.column_widths 20, 60, 12
