@@ -5,9 +5,11 @@ require 'nokogiri'
 require 'axlsx'
 require 'bigdecimal'
 
+# Set the time and date
 time = Time.new
 date = "#{time.day}/#{time.month}/#{time.year}"
 
+# List of arrays containing all the products by category
 garden_room = ['https://www.argos.co.uk/product/9507092',
                'https://www.argos.co.uk/product/9543063',
                'https://www.argos.co.uk/product/9654873',
@@ -100,6 +102,7 @@ nintendo_games = ['https://www.argos.co.uk/product/6846440',
                   'https://www.argos.co.uk/product/7918865',
                   'https://www.argos.co.uk/product/9482894']
 
+# Function to take all the arrays and print to sheet
 def add_to_sheet(sheet, array, row_data_left, row_data, currency)
   agent = 'Mozilla/5.0 (Windows; U; Win 9x 4.90; SG; rv:1.9.2.4) Gecko/20101104 Netscape/9.1.0285'
 
@@ -117,9 +120,11 @@ def add_to_sheet(sheet, array, row_data_left, row_data, currency)
   sheet.add_row
 end
 
+# Set up a new workbook
 p = Axlsx::Package.new
 wb = p.workbook
 
+# Set up the styles for the workbook
 s = wb.styles
 wb_title = s.add_style sz: 16, b: true
 row_header = s.add_style alignment: { horizontal: :center }, b: true, sz: 11
@@ -127,6 +132,7 @@ row_data = s.add_style sz: 11
 row_data_left = s.add_style sz: 11, alignment: { horizontal: :center }
 currency = s.add_style(format_code: '£#,##0.00', sz: 11, alignment: { horizontal: :center })
 
+# 'VGS Wall' sheet in the new worksheet
 wb.add_worksheet(name: 'VGS Wall') do |sheet|
   sheet.add_row ["Price Changes for #{date}"], style: wb_title
   sheet.add_row
@@ -140,10 +146,10 @@ wb.add_worksheet(name: 'VGS Wall') do |sheet|
   add_to_sheet(sheet, nintendo_hardware, row_data_left, row_data, currency)
   add_to_sheet(sheet, nintendo_games, row_data_left, row_data, currency)
 
-  sheet.add_row ['❤️ by Lee Jackson']
   sheet.column_widths 20, 60, 12
 end
 
+# 'Furniture Prices' sheet in the new worksheet
 wb.add_worksheet(name: 'Furniture Prices') do |sheet|
   sheet.add_row ["Price Changes for #{date}"], style: wb_title
   sheet.add_row
@@ -170,8 +176,8 @@ wb.add_worksheet(name: 'Furniture Prices') do |sheet|
   sheet.add_row ['Bed Room', '', ''], style: row_header
   add_to_sheet(sheet, bed_room, row_data_left, row_data, currency)
 
-  sheet.add_row ['❤️ by Lee Jackson']
   sheet.column_widths 20, 60, 12
 end
 
+# Save workbook to file name
 p.serialize 'price_prices.xlsx'
