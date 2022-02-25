@@ -19,18 +19,18 @@ grey_living = ['https://www.argos.co.uk/product/9476886',
                'https://www.argos.co.uk/product/9600243',
                'https://www.argos.co.uk/product/9444870',
                'https://www.argos.co.uk/product/9463789',
-               'https://www.argos.co.uk/product/3286869',
                'https://www.argos.co.uk/product/9637089',
                'https://www.argos.co.uk/product/9233878',
                'https://www.argos.co.uk/product/9561887',
                'https://www.argos.co.uk/product/9581276',
-               'https://www.argos.co.uk/product/9376773']
+               'https://www.argos.co.uk/product/9376773',
+               'https://www.argos.co.uk/product/9337918',
+               'https://www.argos.co.uk/product/9537189']
 
 dining_room = ['https://www.argos.co.uk/product/9397109',
                'https://www.argos.co.uk/product/9376711',
                'https://www.argos.co.uk/product/9627958',
                'https://www.argos.co.uk/product/9619588',
-               'https://www.argos.co.uk/product/9174487',
                'https://www.argos.co.uk/product/9548178',
                'https://www.argos.co.uk/product/9534450']
 
@@ -39,13 +39,21 @@ green_living = ['https://www.argos.co.uk/product/9514731',
                 'https://www.argos.co.uk/product/1431506',
                 'https://www.argos.co.uk/product/9601510',
                 'https://www.argos.co.uk/product/9547801',
-                'https://www.argos.co.uk/product/9338058',
                 'https://www.argos.co.uk/product/9563603',
                 'https://www.argos.co.uk/product/9417340',
                 'https://www.argos.co.uk/product/9424883',
                 'https://www.argos.co.uk/product/9465000',
                 'https://www.argos.co.uk/product/9598867',
-                'https://www.argos.co.uk/product/9362079']
+                'https://www.argos.co.uk/product/9362079',
+                'https://www.argos.co.uk/product/3280243',
+                'https://www.argos.co.uk/product/9617731',
+                'https://www.argos.co.uk/product/9614057',
+                'https://www.argos.co.uk/product/9612183',
+                'https://www.argos.co.uk/product/3269965',
+                'https://www.argos.co.uk/product/9558326',
+                'https://www.argos.co.uk/product/9556108',
+                'https://www.argos.co.uk/product/9541931',
+                'https://www.argos.co.uk/product/9522716']
 
 pidgeon_holes = ['https://www.argos.co.uk/product/9614057',
                  'https://www.argos.co.uk/product/9612183',
@@ -60,7 +68,11 @@ kids_room = ['https://www.argos.co.uk/product/9360882',
              'https://www.argos.co.uk/product/9535363',
              'https://www.argos.co.uk/product/9584682',
              'https://www.argos.co.uk/product/9549421',
-             'https://www.argos.co.uk/product/8039365']
+             'https://www.argos.co.uk/product/8039365',
+             'https://www.argos.co.uk/product/8651365',
+             'https://www.argos.co.uk/product/1165140',
+             'https://www.argos.co.uk/product/9520048',
+             'https://www.argos.co.uk/product/8101499']
 
 bed_room = ['https://www.argos.co.uk/product/5970836',
             'https://www.argos.co.uk/product/9540334',
@@ -70,7 +82,11 @@ bed_room = ['https://www.argos.co.uk/product/5970836',
             'https://www.argos.co.uk/product/9624607',
             'https://www.argos.co.uk/product/9522613',
             'https://www.argos.co.uk/product/4528746',
-            'https://www.argos.co.uk/product/8696186']
+            'https://www.argos.co.uk/product/8697068',
+            'https://www.argos.co.uk/product/9579147',
+            'https://www.argos.co.uk/product/8355049',
+            'https://www.argos.co.uk/product/8395229',
+            'https://www.argos.co.uk/product/4497121']
 
 sony_hw = ['https://www.argos.co.uk/product/8349000',
            'https://www.argos.co.uk/product/5718469',
@@ -155,26 +171,26 @@ wb.add_worksheet(name: 'Furniture Prices') do |sheet|
   sheet.add_row
   sheet.add_row ['Cat Num', 'Product', 'Price (£)'], style: row_header
 
-  sheet.add_row ['Garden Room'], style: row_header
-  add_to_sheet(sheet, garden_room, row_data_left, row_data, currency)
-
-  sheet.add_row ['Grey Sofa Living'], style: row_header
-  add_to_sheet(sheet, grey_living, row_data_left, row_data, currency)
-
-  sheet.add_row ['Dining Room'], style: row_header
-  add_to_sheet(sheet, dining_room, row_data_left, row_data, currency)
-
   sheet.add_row ['Green Sofa Living'], style: row_header
   add_to_sheet(sheet, green_living, row_data_left, row_data, currency)
 
   sheet.add_row ['Pidgeon Holes'], style: row_header
   add_to_sheet(sheet, pidgeon_holes, row_data_left, row_data, currency)
 
-  sheet.add_row ['Kids Room'], style: row_header
-  add_to_sheet(sheet, kids_room, row_data_left, row_data, currency)
+  sheet.add_row ['Grey Sofa Living'], style: row_header
+  add_to_sheet(sheet, grey_living, row_data_left, row_data, currency)
+
+  sheet.add_row ['Garden Room'], style: row_header
+  add_to_sheet(sheet, garden_room, row_data_left, row_data, currency)
+
+  sheet.add_row ['Dining Room'], style: row_header
+  add_to_sheet(sheet, dining_room, row_data_left, row_data, currency)
 
   sheet.add_row ['Bed Room'], style: row_header
   add_to_sheet(sheet, bed_room, row_data_left, row_data, currency)
+
+  sheet.add_row ['Kids Room'], style: row_header
+  add_to_sheet(sheet, kids_room, row_data_left, row_data, currency)
 
   sheet.column_widths 20, 60, 12
 end
